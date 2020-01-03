@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Lezione1.dir/scrivi.c.o CMakeFiles/Lezione1.dir/xerrori.c.o CMakeFiles/Lezione1.dir/leggi.c.o  -o Lezione1 
