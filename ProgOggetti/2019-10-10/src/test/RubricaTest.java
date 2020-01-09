@@ -3,26 +3,17 @@ package test;
 
 import classes.Rubrica;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RubricaTest {
 
-    @BeforeEach
-    public void setup() {
-        Rubrica.crea ();
-    }
-
-    @AfterEach
-    public void reset() {
-        Rubrica.svuota ();
-    }
-
     @Test
     public void testCreazione() {
-        assertTrue(Rubrica.numEl() == 0);
+        Rubrica.crea();
+        assertEquals(0, Rubrica.numEl());
     }
 
     @Test
@@ -37,6 +28,9 @@ public class RubricaTest {
         assertEquals(1, Rubrica.add("Marco=1231231230"));
         assertEquals(1, Rubrica.add("Geremia=1029384756"));
         assertEquals(1, Rubrica.add("Raffaele=1234876509"));
-        assertTrue(Rubrica.numEl() == 4);
+        assertEquals(1, Rubrica.remove("Gio"));
+        assertEquals(3, Rubrica.numEl());
+        ArrayList<String> trovati = Rubrica.findByString("Luc");
+        assertEquals(0, trovati.size());
     }
 }

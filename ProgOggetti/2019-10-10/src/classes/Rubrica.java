@@ -3,8 +3,8 @@ package classes;
 import java.util.ArrayList;
 
 public class Rubrica {
-    static final int MAX_DIM = 5;
-    static ArrayList<String> rubrica;
+    static final int MAX_DIM = 6;
+    private static ArrayList<String> rubrica;
 
     /**
      * Metodo che crea la Rubrica
@@ -23,12 +23,12 @@ public class Rubrica {
 
     /**
      * Metodo che aggiunge una nuova stringa alla rubrica.
-     * @return  -1 se la rubrica e' piena;
-     *           0 se la stringa e' gia' presente in rubrica;
+     * @return  -1 se la rubrica e' piena;<br>
+     *           0 se la stringa e' gia' presente in rubrica;<br>
      *           1 se la stringa e' stata aggiunta correttamente.
      */
     public static int add(String s) {
-        if (numEl() >= MAX_DIM)
+        if (rubrica.size() == MAX_DIM)
             return -1;
         if (rubrica.contains(s))
             return 0;
@@ -44,8 +44,7 @@ public class Rubrica {
     public static ArrayList<String> findByString(String s) {
         ArrayList<String> match = new ArrayList<>();
 
-        for (int i=0; i<rubrica.size(); i++) {
-            String si = rubrica.get(i);
+        for (String si : rubrica) {
             if (si.startsWith(s))
                 match.add(si);
         }
