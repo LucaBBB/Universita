@@ -6,6 +6,10 @@
 // o di libreria e verificano la presenza di eventuali errori
 // Il sorgente di queste funzioni e' in xerrorsi.c i prototipi in xerrori.h 
 
+/*
+ * getpid() ritorna il PID del processo chiamante;
+ * getppid() ritorna il PID del processo padre di quello chiamante.
+ */
 int main(int argc, char *argv[])
 { 
   int n=3;  // numero di figli da generare
